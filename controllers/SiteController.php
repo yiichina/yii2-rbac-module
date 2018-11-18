@@ -1,29 +1,16 @@
 <?php
 
-namespace app\modules\user\controllers;
+namespace yiichina\modules\rbac\controllers;
 
-use yii\filters\AccessControl;
+use yii\web\Controller;
 
 /**
  * SiteController implements the CRUD actions for User model.
  */
 class SiteController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
+    public function actionIndex()
     {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-        ];
+        echo 'hello world';
     }
 }

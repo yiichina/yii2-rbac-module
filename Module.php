@@ -1,10 +1,10 @@
 <?php
 
-namespace yiichina\comments;
+namespace yiichina\modules\rbac;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'yiichina\comments\controllers';
+    public $controllerNamespace = 'yiichina\modules\rbac\controllers';
 
     public function init()
     {
