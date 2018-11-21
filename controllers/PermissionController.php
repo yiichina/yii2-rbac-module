@@ -7,10 +7,10 @@ use yii\web\Controller;
 /**
  * SiteController implements the CRUD actions for User model.
  */
-class SiteController extends Controller
+class PermissionController extends Controller
 {
     public function actionIndex()
     {
-        echo 'hello world';
+        return $this->render('index');
     }
 }

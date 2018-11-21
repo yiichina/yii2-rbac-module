@@ -2,6 +2,6 @@
 
 namespace yiichina\modules\rbac\models;
 
-class Permission extends Model
+class Rule extends Model
 {
 }
