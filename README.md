@@ -1,8 +1,8 @@
-Yii Comments
+Yii 2 RBAC Module
 ===================================
 
-[![Latest Stable Version](https://poser.pugx.org/yiichina/yii2-rbac-module/v/stable.png)](https://packagist.org/packages/yiichina/yii2-comments)
-[![Total Downloads](https://poser.pugx.org/yiichina/yii2-rbac-module/downloads.png)](https://packagist.org/packages/yiichina/yii2-comments)
+[![Latest Stable Version](https://poser.pugx.org/yiichina/yii2-rbac-module/v/stable.png)](https://packagist.org/packages/yiichina/yii2-rbac-module)
+[![Total Downloads](https://poser.pugx.org/yiichina/yii2-rbac-module/downloads.png)](https://packagist.org/packages/yiichina/yii2-rbac-module)
 [![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
 
 安装

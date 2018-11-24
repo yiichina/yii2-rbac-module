@@ -2,9 +2,8 @@
 use yii\helpers\Html;
 
 ?>
-<div class="page-header">
-    <h1>评论</h1>
-</div>
+
+<h1>RBAC 管理模块</h1>
 
 <?= Html::a('权限管理', ['permission/index']) ?>
 

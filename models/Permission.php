@@ -2,6 +2,9 @@
 
 namespace yiichina\modules\rbac\models;
 
+use Yii;
+use yii\base\Model;
+
 class Permission extends Model
 {
     /**
@@ -10,9 +13,9 @@ class Permission extends Model
     public function rules()
     {
         return [
-            [['content'], 'required'],
-            [['parent_id'], 'number'],
-            [['content'], 'string', 'min' => 5],
+            ['name', 'required'],
+            ['name', 'string', 'max' => 64],
+            [['description', 'data'], 'string'],
         ];
     }
 
