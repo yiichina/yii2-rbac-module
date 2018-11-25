@@ -3,10 +3,11 @@
 namespace yiichina\modules\rbac\models;
 
 use yii\helpers\ArrayHelper;
-use yii\rbac\Item;
 
 class AuthRole extends AbstractAuthItem
 {
+    public $typeName = '角色';
+
     public function getAuthItems()
     {
         return $this->manager->getRoles();

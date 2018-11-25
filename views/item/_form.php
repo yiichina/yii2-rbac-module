@@ -14,6 +14,6 @@ use yii\helpers\Html;
 
 <?= $form->field($model, 'children')->checkboxList($model->childrenList) ?>
 
-<?= Html::submitButton(empty($model->oldName) ? '添加' : '更新') ?>
+<?= Html::submitButton(empty($model->oldName) ? '添加' : '更新', ['class' => 'btn btn-primary']) ?>
 
 <?php ActiveForm::end(); ?>

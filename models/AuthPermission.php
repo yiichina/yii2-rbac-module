@@ -6,6 +6,8 @@ use yii\helpers\ArrayHelper;
 
 class AuthPermission extends AbstractAuthItem
 {
+    public $typeName = '权限';
+
     public function getAuthItems()
     {
         return $this->manager->getPermissions();

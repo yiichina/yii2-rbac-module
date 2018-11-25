@@ -4,7 +4,7 @@ namespace yiichina\modules\rbac\controllers;
 
 use Yii;
 use yii\web\Controller;
-use backend\models\UserSearch;
+use yii\data\ActiveDataProvider;
 use yiichina\modules\rbac\models\AuthAssignment;
 
 /**
@@ -12,10 +12,20 @@ use yiichina\modules\rbac\models\AuthAssignment;
  */
 class AssignmentController extends Controller
 {
+    private $_identityClass;
+
+    public function init()
+    {
+        $this->_identityClass = Yii::$app->user->identityClass;
+    }
+
     public function actionIndex()
     {
-        $searchModel = new UserSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = new ActiveDataProvider([
+            'query' => ($this->_identityClass)::find()->orderBy([
+                'id' => SORT_DESC,
+            ]),
+        ]);
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
@@ -31,6 +41,7 @@ class AssignmentController extends Controller
         }
 
         return $this->render('update', [
+            'user' => ($this->_identityClass)::findOne($id),
             'model' => $model,
         ]);
     }
@@ -38,6 +49,7 @@ class AssignmentController extends Controller
     protected function findModel($id)
     {
         $class = Yii::$app->user->identityClass;
+
         if (($user = $class::findIdentity($id)) !== null) {
             $model = Yii::createObject([
                 'class'   => AuthAssignment::className(),

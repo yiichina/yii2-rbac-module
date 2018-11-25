@@ -50,6 +50,7 @@ abstract class AbstractAuthItem extends Model
         return true;
     }
 
+
     /**
      * @inheritdoc
      */
@@ -61,6 +62,7 @@ abstract class AbstractAuthItem extends Model
             'description' => '描述',
             'data' => '数据',
             'children' => '子权限',
+            'createdAt' => '创建时间',
         ];
     }
 

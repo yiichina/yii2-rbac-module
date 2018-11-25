@@ -5,6 +5,7 @@ namespace yiichina\modules\rbac\controllers;
 use Yii;
 use yii\web\Controller;
 use yii\data\ArrayDataProvider;
+use yii\filters\VerbFilter;
 
 /**
  * Class ItemController
@@ -12,6 +13,18 @@ use yii\data\ArrayDataProvider;
 class ItemController extends Controller
 {
     protected $modelClass;
+
+    public function behaviors()
+    {
+        return [
+            'verbFilter' => [
+                'class'   => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+        ];
+    }
 
     public function actionIndex()
     {
@@ -24,12 +37,10 @@ class ItemController extends Controller
             'pagination' => [
                 'pageSize' => 10,
             ],
-            'sort' => [
-                'attributes' => ['name', 'description'],
-            ],
         ]);
 
         return $this->render('/item/index', [
+            'model' => $model,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -71,7 +82,8 @@ class ItemController extends Controller
             'class' => $this->modelClass,
         ]);
 
-        $model->manager->remove($model->authItem);
+        $model->manager->remove($model->getAuthItem($name));
+
         return $this->redirect(['index']);
     }
 }
