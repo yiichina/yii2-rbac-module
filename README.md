@@ -31,3 +31,13 @@ composer require --prefer-dist yiichina/yii2-rbac-module "*"
 
 使用方法
 -------
+
+/rbac
+/rbac/permission
+/rbac/assignment
+
+延伸阅读
+-------
+
+如果需要针对动作的权限管理，请参考
+https://github.com/yii2mod/yii2-rbac
