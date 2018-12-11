@@ -28,14 +28,6 @@ composer require --prefer-dist yiichina/yii2-rbac-module "*"
 安装方法
 -------
 
-### 初始化数据库
-
-```
-php yii migrate/up --migrationPath=@yii/rbac/migrations
-```
-
-也可以找到 `@yii/rbac/migrations` 目录下的数据库脚本去执行。
-
 ### 配置模块
 
 ```
@@ -54,6 +46,14 @@ php yii migrate/up --migrationPath=@yii/rbac/migrations
     'defaultRoles' => ['user'],
 ],
 ```
+
+### 初始化数据库
+
+```
+php yii migrate/up --migrationPath=@yii/rbac/migrations
+```
+
+也可以找到 `@yii/rbac/migrations` 目录下的数据库脚本去执行。
 
 使用方法
 -------
